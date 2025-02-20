@@ -1,20 +1,22 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = 'http://localhost:5000/results'
 
-export const register = async (userData) => {
-  const response = await axios.post(`${API_URL}/register`, userData);
-  return response.data;
-};
 
-export const login = async (userData) => {
 
-};
+// export const register = async (userData) => {
+//   const response = await axios.post(`${API_URL}/register`, userData);
+//   return response.data;
+// };
 
-export const getUserProfile = async (token) => {
+// export const login = async (userData) => {
 
-};
+// };
 
-export const updateProfile = async (formData) => {
+// export const getUserProfile = async (token) => {
 
-};
+// };
+
+// export const updateProfile = async (formData) => {
+
+// };

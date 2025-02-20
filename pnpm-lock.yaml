@@ -11,9 +11,6 @@ importers:
       axios:
         specifier: ^1.7.9
         version: 1.7.9
-      json-server:
-        specifier: 1.0.0-beta.3
-        version: 1.0.0-beta.3
       jwt-decode:
         specifier: ^4.0.0
         version: 4.0.0
@@ -63,6 +60,9 @@ importers:
       globals:
         specifier: ^15.14.0
         version: 15.15.0
+      json-server:
+        specifier: 1.0.0-beta.3
+        version: 1.0.0-beta.3
       postcss:
         specifier: ^8.5.3
         version: 8.5.3

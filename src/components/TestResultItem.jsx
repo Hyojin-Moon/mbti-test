@@ -1,17 +1,9 @@
-import { useMutation } from "react-query";
-import { updateTestResultVisibility } from "../api/testResults";
+import { useDeleteTestResult, useUpdateTestVisibility } from "../hooks/querys";
 
-function TestResultItem({ result, isOwner, refetch }) {
+function TestResultItem({ result, isOwner }) {
 
-  const visibilityMutaion = useMutation({
-    mutationFn: () => updateTestResultVisibility(result.id, !result.visibility),
-    onSuccess: () => refetch(),
-  });
-
-  const deleteMutation = useMutation({
-    mutationFn: () => deleteTestResult(result.id),
-    onSuccess: () => refetch(),
-  });
+  const visibilityMutation = useUpdateTestVisibility();
+  const deleteMutation = useDeleteTestResult();
 
   return (
     <div className="border-b py-4">
@@ -22,13 +14,13 @@ function TestResultItem({ result, isOwner, refetch }) {
           <>
             <button
               onClick={() => visibilityMutation.mutate()}
-              className="px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+              className="px-3 py-1 bg-blue-500 text-black rounded-md hover:bg-blue-600"
             >
               {result.visibility ? "비공개" : "공개"}
             </button>
             <button
               onClick={() => deleteMutation.mutate()}
-              className="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
+              className="px-3 py-1 bg-red-500 text-black rounded-md hover:bg-red-600"
             >
               삭제
             </button>

@@ -9,9 +9,9 @@ const Signup = () => {
   const handleSignup = async (userData) => {
 
     try {
-      const response = await register(userData);
-      console.log(response)
-      alert("회원가입 성공! 로그인 페이지로 이동합니다.");
+      await register(userData);
+
+      alert("회원가입 완료입니다~~~ 로그인 페이지로 이동합니다.");
       navigate("/login");
 
     } catch (error) {

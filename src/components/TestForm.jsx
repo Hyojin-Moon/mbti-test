@@ -11,6 +11,7 @@ const TestForm = ({ onSubmit }) => {
     const newAnswers = [...answers];
     newAnswers[index] = { type: questions[index].type, answer };
     setAnswers(newAnswers);
+    console.log("현재 선택된 응답:", newAnswers);
   };
 
   const handleSubmit = (e) => {
@@ -27,9 +28,8 @@ const TestForm = ({ onSubmit }) => {
             {q.options.map((option, i) => (
               <label
                 key={i}
-                className={`block p-3 border rounded-lg cursor-pointer transition-colors duration-300 ${
-                  answers[index]?.answer === option ? "bg-gray-100" : ""
-                } hover:bg-gray-100`}
+                className={`block p-3 border rounded-lg cursor-pointer transition-colors duration-300 ${answers[index]?.answer === option ? "bg-gray-100" : ""
+                  } hover:bg-gray-100`}
               >
                 <input
                   type="radio"

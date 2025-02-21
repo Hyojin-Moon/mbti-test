@@ -14,13 +14,6 @@ export const login = async (userData) => {
   return response.data;
 };
 
-export const logOut = async (userData) => {
-  const response = await axios.delete(`${API_URL}/logout`, {
-    data: userData,
-  });
-  return response.data;
-};
-
 export const getUserProfile = async (token) => {
   const response = await axios.get(`${API_URL}/user`, {
     headers: {

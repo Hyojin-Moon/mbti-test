@@ -3,15 +3,31 @@ import TestForm from "../components/TestForm";
 import { calculateMBTI, mbtiDescriptions } from "../utils/mbtiCalculator";
 import { createTestResult } from "../api/testResults";
 import { useNavigate } from "react-router-dom";
+import useAuthStore from "../store/authStore";
 
-const TestPage = ({ user }) => {
+const TestPage = () => {
+
   const navigate = useNavigate();
   const [result, setResult] = useState(null);
+  const { user } = useAuthStore();
 
   const handleTestSubmit = async (answers) => {
+
     const mbtiResult = calculateMBTI(answers);
-    
     //결과 데이터 APi 구성
+    const resultData = {
+      userId: user.id,
+      mbtiType: mbtiResult,
+      description: mbtiDescriptions[mbtiResult],
+      visibility: true,
+    };
+
+    try {
+      const response = await createTestResult(resultData);
+      setResult(response.mbtiType);
+    } catch (error) {
+      console.error(error);
+    }
 
   };
 
@@ -40,7 +56,7 @@ const TestPage = ({ user }) => {
             </p>
             <button
               onClick={handleNavigateToResults}
-              className="w-full bg-primary-color text-white py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
+              className="w-full bg-primary-color text-black py-3 rounded-lg font-semibold hover:bg-primary-dark transition duration-300 hover:text-[#FF5A5F]"
             >
               결과 페이지로 이동하기
             </button>

@@ -11,6 +11,7 @@
     "json-server": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.66.8",
     "axios": "^1.7.9",
     "jwt-decode": "^4.0.0",
     "react": "^19.0.0",

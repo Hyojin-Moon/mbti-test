@@ -16,9 +16,6 @@ const Login = () => {
             </Link>
           </p>
         </div>
-        <Link to="/">
-        <button>Home</button>
-        </Link>
       </div>
     </div>
   );

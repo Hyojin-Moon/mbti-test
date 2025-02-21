@@ -1,9 +1,11 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
 function TestPage() {
   return (
-    <div>TestPage</div>
-  )
+    <div>
+      <Link to="/results">결과보기</Link>
+      </div>
+  );
 }
 
-export default TestPage
+export default TestPage;

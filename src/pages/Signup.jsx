@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // 완성된 로직들이 아니에요! 참고만 하세요!
   // const handleSignup = async (formData) => {

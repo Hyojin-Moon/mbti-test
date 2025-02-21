@@ -5,21 +5,24 @@ import Signup from "../pages/Signup";
 import Profile from "../pages/Profile";
 import TestPage from "../pages/TestPage";
 import TestResultPage from "../pages/TestResultPage";
+import Layout from "../components/Layout";
+import ProtectedRoute from "../components/ProtectedRoute";
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        {/* 공개 페이지 */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
-          <Route path="/" element={<Home />} />
+          <Route element={<ProtectedRoute />}>
           <Route path="/profile" element={<Profile />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/results" element={<TestResultPage />} />
-
-
+          </Route>
+        </Route>
       </Routes>
     </Router>
   );

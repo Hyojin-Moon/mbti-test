@@ -9,8 +9,8 @@ const Home = () => {
       <p>
         자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.
       </p>
-      <Link to='/login'>
-        <button>로그인하기</button>
+      <Link to="/test">
+      테스트 시작
       </Link>
     </div>
   );

@@ -5,7 +5,9 @@ const Profile = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+
     const fetchProfile = async () => {
+      
       const token = localStorage.getItem("token");
       if (!token) return alert("로그인이 필요합니다.");
 
@@ -13,8 +15,9 @@ const Profile = () => {
         const response = await getUserProfile(token);
         console.log("회원정보:", response);
         setUser(response);
+
       } catch (error) {
-        console.error("회원정보 조회 실패:", error.response?.data);
+        console.error("회원정보 조회 실패:", error.data);
       }
     };
 

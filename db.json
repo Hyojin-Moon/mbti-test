@@ -1,6 +1,11 @@
 {
-  "users": [
-    { "id": 1, "nickname": "효진" },
-    { "id": 2, "nickname": "호영" }
+  "testResults": [
+    {
+      "id": 1,
+      "userId": "user123",
+      "mbtiType": "ESTJ",
+      "description": "리더십이 강하고 논리적입니다.",
+      "visibility": true
+    }
   ]
 }

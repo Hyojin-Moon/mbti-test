@@ -3,19 +3,22 @@ import AuthForm from "../components/AuthForm";
 import { login } from "../api/auth";
 
 const Login = () => {
+
   const navigate = useNavigate();
 
   // 통신
   const handleLogin = async (userData) => {
+
     try {
+
       const response = await login(userData);
-      console.log(response)
       localStorage.setItem("token", response.accessToken);
       alert("로그인 성공!");
-      navigate("/profile"); // 로그인 후 프로필 페이지로 이동
+      navigate("/");
+
     } catch (error) {
-      console.error(error.response?.data)
-      alert("로그인 실패: " + error.response?.data?.message || "알 수 없는 오류");
+      console.error(error)
+      alert("로그인 실패: " + error.message || "알 수 없는 오류");
     }
   };
 

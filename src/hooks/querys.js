@@ -13,8 +13,14 @@ export const useTestResults = () => {
 };
 
 export const useUpdateTestVisibility = () => {
+
+  const queryClient = useQueryClient();
+
   return useMutation({
-    mutationFn: ( id, visibility ) => updateTestResultVisibility(id, visibility),
+    mutationFn: ({id, visibility}) => updateTestResultVisibility(id, visibility),
+    onSuccess: () => {
+      queryClient.invalidateQueries([QUERY_KEYS.TEST_RESULTS]);
+    }
   });
 };
 
@@ -25,7 +31,7 @@ export const useDeleteTestResult = () => {
   return useMutation({
     mutationFn: (id) => deleteTestResult(id),
     onSuccess: () => {
-      queryClient.invalidateQueries("testResults");
+      queryClient.invalidateQueries([QUERY_KEYS.TEST_RESULTS]);
     }
   });
 };

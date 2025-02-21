@@ -10,7 +10,6 @@ const TestForm = ({ onSubmit }) => {
     const newAnswers = [...answers];
     newAnswers[index] = { type: questions[index].type, answer };
     setAnswers(newAnswers);
-    console.log("현재 선택된 응답:", newAnswers);
   };
 
   const handleSubmit = (e) => {

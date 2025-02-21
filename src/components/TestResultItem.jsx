@@ -12,16 +12,14 @@ function TestResultItem({ result, isOwner }) {
       <div className="flex justify-end gap-2 mt-2">
         {isOwner && (
           <>
-            <button
-              onClick={() => visibilityMutation.mutate(result.id)}
-              className="px-3 py-1 bg-blue-500 text-black rounded-md hover:bg-blue-600"
-            >
+
+            <button onClick={() => visibilityMutation.mutate({ id: result.id, visibility: !result.visibility })}
+              className="px-3 py-1 bg-blue-500 text-black rounded-md hover:bg-blue-600">
               {result.visibility ? "비공개" : "공개"}
             </button>
-            <button
-              onClick={() => deleteMutation.mutate(result.id)}
-              className="px-3 py-1 bg-red-500 text-black rounded-md hover:bg-red-600"
-            >
+
+            <button onClick={() => deleteMutation.mutate(result.id)}
+              className="px-3 py-1 bg-red-500 text-black rounded-md hover:bg-red-600">
               삭제
             </button>
           </>

@@ -10,12 +10,16 @@ const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/* 공개 페이지 */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/test" element={<TestPage />} />
-        <Route path="/results" element={<TestResultPage />} />
+
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/test" element={<TestPage />} />
+          <Route path="/results" element={<TestResultPage />} />
+
+
       </Routes>
     </Router>
   );

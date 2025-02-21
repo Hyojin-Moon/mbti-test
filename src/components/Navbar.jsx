@@ -10,6 +10,12 @@ const Navbar = () => {
 
       {/* 오른쪽 - 로그인 & 회원가입 */}
       <div>
+      <Link to="/test" className="mr-4">
+          테스트 하러가기
+        </Link>
+      <Link to="/results" className="mr-4">
+          테스트 결과 보기
+        </Link>
         <Link to="/profile" className="mr-4">
           프로필
         </Link>

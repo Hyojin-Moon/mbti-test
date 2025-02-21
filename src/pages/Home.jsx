@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div>
-      <h1>
+      <h1 className="text-title">
         무료 성격 테스트
       </h1>
       <p>

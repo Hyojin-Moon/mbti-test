@@ -5,6 +5,7 @@ import { register } from "../api/auth";
 const Signup = () => {
   const navigate = useNavigate();
 
+  //통신
   const handleSignup = async (userData) => {
     try {
       const response = await register(userData);

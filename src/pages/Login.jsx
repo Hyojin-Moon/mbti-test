@@ -5,6 +5,7 @@ import { login } from "../api/auth";
 const Login = () => {
   const navigate = useNavigate();
 
+  // 통신
   const handleLogin = async (userData) => {
     try {
       const response = await login(userData);

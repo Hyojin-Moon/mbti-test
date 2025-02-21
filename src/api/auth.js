@@ -1,40 +1,34 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/results'
+const API_URL = 'https://www.nbcamp-react-auth.link';
 
 
-export const getTestResults = async () => {
-  const response = await axios.get(API_URL);
+//회원가입
+export const register = async (userData) => {
+  const response = await axios.post(`${API_URL}/register`, userData);
   return response.data;
 };
 
-export const createTestResult = async (resultData) => {
-  const response = await axios.post(API_URL, resultData);
+export const login = async (userData) => {
+  const response = await axios.post(`${API_URL}/login`, userData);
   return response.data;
 };
 
-export const updateTestResultVisibility = async (id, visibility) => {
-  const response = await axios.patch(`${API_URL}/${id}`, { visibility });
+export const getUserProfile = async (token) => {
+  const response = await axios.get(`${API_URL}/user`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    }
+  });
   return response.data;
 };
 
-export const deleteTestResult = async (id) => {
-  const response = await axios.delete(`${API_URL}/${id}`);
+export const updateProfile = async (formData, token) => {
+  const response = await axios.patch(`${API_URL}/profile`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+      Authorization: `Bearer ${token}`,
+    },
+  });
   return response.data;
 };
-// export const register = async (userData) => {
-//   const response = await axios.post(`${API_URL}/register`, userData);
-//   return response.data;
-// };
-
-// export const login = async (userData) => {
-
-// };
-
-// export const getUserProfile = async (token) => {
-
-// };
-
-// export const updateProfile = async (formData) => {
-
-// };

@@ -1,24 +1,24 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import AuthForm from "../components/AuthForm";
+import { login } from "../api/auth";
 
 const Login = () => {
+  const navigate = useNavigate();
 
+  const handleLogin = async (userData) => {
+    try {
+      const response = await login(userData);
+      console.log(response)
+      localStorage.setItem("token", response.accessToken);
+      alert("로그인 성공!");
+      navigate("/profile"); // 로그인 후 프로필 페이지로 이동
+    } catch (error) {
+      console.error(error.response?.data)
+      alert("로그인 실패: " + error.response?.data?.message || "알 수 없는 오류");
+    }
+  };
 
-  return (
-    <div>
-      <div>
-        <h1>로그인</h1>
-        {/* <AuthForm mode="login" onSubmit={handleLogin} /> */}
-        <div>
-          <p>
-            계정이 없으신가요?{" "}
-            <Link to="/signup">
-              회원가입
-            </Link>
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+  return <AuthForm mode="login" onSubmit={handleLogin} />;
 };
 
 export default Login;

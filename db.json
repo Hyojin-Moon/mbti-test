@@ -1,8 +1,6 @@
 {
   "users": [
-    { "id": 1, "name": "효진" },
-    { "id": 2, "name": "호영" }
-  ],
-  "tests": [{ "id": 1, "question": "당신은 외향적입니까?" }],
-  "results": [{ "id": 1, "type": "ENTP", "description": "토론가 타입입니다." }]
+    { "id": 1, "nickname": "효진" },
+    { "id": 2, "nickname": "호영" }
+  ]
 }

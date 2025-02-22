@@ -5,8 +5,10 @@ import { useTestResults } from "../hooks/querys";
 function TestResultList() {
 
   const { user } = useAuthStore();
-  const { data: testResults = [], refetch } = useTestResults();
+  const { data: testResults = [], isPending, isError, refetch } = useTestResults();
 
+  if (isPending) return <p>로딩 중..</p>;
+  if (isError) return <p>에러발생: {isError.message}</p>;
 
   // 비공개 결과는 작성자만 볼 수 있도록 필터링
   const filteredResults = testResults.filter(

@@ -8,8 +8,12 @@ import useAuthStore from "../store/authStore";
 const TestPage = () => {
 
   const navigate = useNavigate();
-  const [result, setResult] = useState(null);
   const { user } = useAuthStore();
+
+  // 테스트 결과는 이 페이지에서 한 번만 보여줄거니까 state사용
+  // 고민된다.. 음.. 내 결과만 보는 page도 필요하다면?
+  // 아니면 결과를 유지하며 사용 할려면?
+  const [result, setResult] = useState(null);
 
   const handleTestSubmit = async (answers) => {
 

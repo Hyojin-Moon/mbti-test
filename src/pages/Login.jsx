@@ -12,7 +12,6 @@ const Login = () => {
   const handleLogin = async (userData) => {
 
     try {
-
       const response = await login(userData);
 
       // user 객체를 직접 생성하여 setUser에 전달

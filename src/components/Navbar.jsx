@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
+    <nav className="bg-red-500 text-white p-4 flex justify-between items-center">
       {/* 왼쪽 - 홈 링크 */}
       <Link to="/" className="text-lg font-bold">
         MBTI TEST
@@ -21,12 +21,12 @@ const Navbar = () => {
 
       {/* 오른쪽 - 로그인 & 회원가입 */}
       <div>
-        <Link to="/test" className="mr-4">테스트 하러가기</Link>
-        <Link to="/results" className="mr-4">테스트 결과 보기</Link>
-        <Link to="/profile" className="mr-4">프로필</Link>
+        <Link to="/test" className="mr-4 font-bold">테스트 하러가기</Link>
+        <Link to="/results" className="mr-4 font-bold">테스트 결과 보기</Link>
+        <Link to="/profile" className="mr-4 font-bold">프로필</Link>
 
         {user ? (
-          <button onClick={handleLogout} className="mr-4 bg-red-500 px-3 py-1 rounded">
+          <button onClick={handleLogout} className="mr-4 bg-gray-500 px-3 py-1 rounded font-bold">
             로그아웃
           </button>
         ) : (

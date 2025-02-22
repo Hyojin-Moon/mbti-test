@@ -2,7 +2,10 @@ import { useState } from "react";
 import { questions } from "../data/questions";
 
 const TestForm = ({ onSubmit }) => {
+  
+  // answers는 여기서만 사용하니까 지역상태로 유지 
   const [answers, setAnswers] = useState(
+    //답변 저장하는 객체 생성
     Array(questions.length).fill({ type: "", answer: "" }),
   );
 
@@ -14,6 +17,7 @@ const TestForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // 어쩔수 없이 부모컴포넌트(TestPage)로 전달
     onSubmit(answers);
   };
 

@@ -15,7 +15,7 @@ function TestResultItem({ result, isOwner }) {
 
             <button onClick={() => visibilityMutation.mutate({ id: result.id, visibility: !result.visibility })}
               className="px-3 py-1 bg-blue-500 text-black rounded-md hover:bg-blue-600">
-              {result.visibility ? "비공개" : "공개"}
+              {result.visibility ? "비공개로 전환" : "공개로 전환"}
             </button>
 
             <button onClick={() => deleteMutation.mutate(result.id)}

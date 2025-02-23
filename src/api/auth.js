@@ -21,7 +21,12 @@ export const getUserProfile = async (token) => {
   return response.data;
 };
 
-export const updateProfile = async (formData, token) => {
+export const updateProfile = async (nickname, token) => {
+
+  const formData = new FormData();
+  // avatar와 nickname 중 하나 또는 모두 변경 가능
+  formData.append("nickname", nickname);
+
   const response = await axios.patch(`${API_URL}/profile`, formData, {
     headers: {
       "Content-Type": "multipart/form-data",

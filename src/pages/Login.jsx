@@ -19,7 +19,7 @@ const Login = () => {
         id: response.userId,
         nickname: response.nickname,
         avatar: response.avatar, // 나중에 프로필 이미지 만들자
-        accessToken: response.accessToken
+        token: response.accessToken
       };
 
       setUser(userDataToStore);

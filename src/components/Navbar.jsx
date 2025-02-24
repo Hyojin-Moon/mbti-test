@@ -21,18 +21,18 @@ const Navbar = () => {
 
       {/* 오른쪽 - 로그인 & 회원가입 */}
       <div>
-        <Link to="/test" className="mr-4 font-bold">테스트 하러가기</Link>
-        <Link to="/results" className="mr-4 font-bold">테스트 결과 보기</Link>
-        <Link to="/profile" className="mr-4 font-bold">프로필</Link>
+        <Link to="/test" className="mr-4 font-bold px-4 py-2 border-2 border-white rounded-md hover:bg-red-400 transition">테스트하기</Link>
+        <Link to="/results" className="mr-4 font-bold px-4 py-2 border-2 border-white rounded-md hover:bg-red-400 transition">결과 보기</Link>
+        <Link to="/profile" className="mr-4 font-bold px-4 py-2 border-2 border-white rounded-md hover:bg-red-400 transition">프로필</Link>
 
         {user ? (
-          <button onClick={handleLogout} className="mr-4 bg-gray-500 px-3 py-1 rounded font-bold">
+          <button onClick={handleLogout} className="mr-4 font-bold px-4 py-2 border-2 border-white rounded-md hover:bg-red-400 transition">
             로그아웃
           </button>
         ) : (
           <>
-            <Link to="/login" className="mr-4">로그인</Link>
-            <Link to="/signup">회원가입</Link>
+            <Link to="/login" className="mr-4 font-bold px-4 py-2 border-2 border-white rounded-md hover:bg-red-400 transition">로그인</Link>
+            <Link to="/signup" className="mr-4 font-bold px-4 py-2 border-2 border-white rounded-md hover:bg-red-400 transition">회원가입</Link>
           </>
         )}
       </div>

@@ -38,8 +38,8 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold mb-4">
+    <div className="max-w-md mx-auto p-6 mt-20 bg-white shadow-md rounded-lg">
+      <h2 className="text-2xl font-bold mb-4 flex justify-center">
         {mode === "signup" ? "회원가입" : mode === "login" ? "로그인" : "정보 변경"}
       </h2>
 

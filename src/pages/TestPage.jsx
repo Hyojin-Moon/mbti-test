@@ -26,6 +26,8 @@ const TestPage = () => {
       mbtiType: mbtiResult,
       description: mbtiDescriptions[mbtiResult],
       visibility: true,
+      nickname: user.nickname,
+      avatar: user.avatar,
     };
 
     try {

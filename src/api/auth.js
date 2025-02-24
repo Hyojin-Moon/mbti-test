@@ -4,17 +4,18 @@ const API_URL = 'https://www.nbcamp-react-auth.link';
 
 export const register = async (id, password, nickname) => {
 
-  const formData = new FormData();
-  formData.append("id", id);
-  formData.append("password", password);
-  formData.append("nickname", nickname);
-
-  const response = await axios.post(`${API_URL}/register`, formData, {
+  const response = await axios.post(`${API_URL}/register`, {
+    id,
+    password,
+    nickname
+  }, {
     headers: {
-      "Content-Type": "multipart/form-data",
+      "Content-Type": "application/json",
     },
   });
+
   return response.data;
+  
 };
 
 export const login = async (userData) => {

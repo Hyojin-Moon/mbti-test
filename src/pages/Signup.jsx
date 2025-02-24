@@ -9,7 +9,7 @@ const Signup = () => {
   const handleSignup = async (userData) => {
 
     try {
-      await register(userData.id, userData.password, userData.nickname, userData.avatar);
+      await register(userData);
 
       //이미지 업로드는 여기서 ? 
       alert("회원가입 완료입니다~~~ 로그인 페이지로 이동합니다.");

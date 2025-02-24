@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="bg-red-500 text-white p-4 flex justify-between items-center">
       {/* 왼쪽 - 홈 링크 */}
-      <Link to="/" className="text-lg font-bold">
+      <Link to="/" className="nav-link">
         MBTI TEST
       </Link>
 

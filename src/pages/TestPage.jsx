@@ -46,7 +46,7 @@ const TestPage = () => {
 
   return (
     <div className="w-full flex flex-col items-center justify-center bg-white">
-      <div className="bg-white rounded-lg p-8 max-w-lg w-full h-full overflow-y-auto">
+      <div className="card-responsive max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl">
         {!result ? (
           <>
             <h1 className="text-3xl font-bold text-primary-color mb-6 text-center">

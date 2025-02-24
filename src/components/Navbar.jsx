@@ -1,10 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import useAuthStore from "../store/authStore";
+import { useState } from "react";
 
 const Navbar = () => {
 
   const { user, logout } = useAuthStore();
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -19,8 +21,11 @@ const Navbar = () => {
         MBTI TEST
       </Link>
 
+      {/* 모바일 햄버거 버튼 */}
+      <button className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
+      
       {/* 오른쪽 - 로그인 & 회원가입 */}
-      <div>
+      <div className={`absolute top-14 right-0 bg-red-500 p-4 flex flex-col gap-5 text-center transition-all duration-300 md:static md:flex-row md:gap-4 md:flex rounded-md ${menuOpen ? "flex" : "hidden"}`}>
         <Link to="/test" className="nav-link">테스트하기</Link>
         <Link to="/results" className="nav-link">결과 보기</Link>
         <Link to="/profile" className="nav-link">프로필</Link>

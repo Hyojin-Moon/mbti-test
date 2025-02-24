@@ -38,12 +38,12 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
   };
 
   return (
-    <div className="container section">
+    <div className="container section w-full sm:w-3/4 md:w-1/2">
       <h2 className="heading">
         {mode === "signup" ? "회원가입" : mode === "login" ? "로그인" : "정보 변경"}
       </h2>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="form-responsive">
 
         {/* 프로필 이미지 */}
         {mode === "profile" && (
@@ -81,13 +81,13 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
               value={formData.id}
               onChange={handleChange}
               required
-              className="w-full p-2 border rounded-md"
+              className="input"
             />
           </div>
         ) : (
           <div>
             <label className="block font-medium">아이디</label>
-            <p className="w-full p-2 border rounded-md bg-gray-100">{formData.id}</p>
+            <p className="input bg-gray-100">{formData.id}</p>
           </div>
         )}
 

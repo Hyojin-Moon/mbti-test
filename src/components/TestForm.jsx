@@ -17,7 +17,7 @@ const TestForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // 어쩔수 없이 부모컴포넌트(TestPage)로 전달
+    //부모컴포넌트(TestPage)로 전달
     onSubmit(answers);
   };
 

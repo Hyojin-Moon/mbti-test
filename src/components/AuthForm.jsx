@@ -8,15 +8,22 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
     password: mode === "login" ? "" : undefined,
     nickname: mode === "signup" || mode === "profile" ?
       initialData.nickname || "" : undefined,
+    avatar: null,
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type, files } = e.target;
+
+    if (type === "file") {
+      setFormData((prev) => ({ ...prev, avatar: files[0] }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     //formData를 부모 컴포넌트로 전달(login, signup)
     /*
     여기도 부모로 전달하는게 리액트의 방식은 아니지만
@@ -80,6 +87,19 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
               value={formData.nickname || ""}
               onChange={handleChange}
               required
+              className="w-full p-2 border rounded-md"
+            />
+          </div>
+        )}
+
+        {/* 프로필 이미지 */}
+        {(mode === "signup" || mode === "profile") && (
+          <div>
+            <label className="block font-medium">프로필 이미지</label>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleChange}
               className="w-full p-2 border rounded-md"
             />
           </div>

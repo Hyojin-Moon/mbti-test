@@ -26,18 +26,19 @@ const Navbar = () => {
       
       {/* 오른쪽 - 로그인 & 회원가입 */}
       <div className={`absolute top-14 right-0 bg-red-500 p-4 flex flex-col gap-5 text-center transition-all duration-300 md:static md:flex-row md:gap-4 md:flex rounded-md ${menuOpen ? "flex" : "hidden"}`}>
-        <Link to="/test" className="nav-link">테스트하기</Link>
-        <Link to="/results" className="nav-link">결과 보기</Link>
-        <Link to="/profile" className="nav-link">프로필</Link>
+        <Link to="/test" className="nav-link">TEST START!</Link>
+        <Link to="/results" className="nav-link">Borad</Link>
+        <Link to="/my-results" className="nav-link">My MBTI</Link>
+        <Link to="/profile" className="nav-link">My Profile</Link>
 
         {user ? (
           <button onClick={handleLogout} className="nav-link">
-            로그아웃
+            Logout
           </button>
         ) : (
           <>
-            <Link to="/login" className="nav-link">로그인</Link>
-            <Link to="/signup" className="nav-link">회원가입</Link>
+            <Link to="/login" className="nav-link">Login</Link>
+            <Link to="/signup" className="nav-link">Signup</Link>
           </>
         )}
       </div>

@@ -1,17 +1,29 @@
 import { useDeleteTestResult, useUpdateTestVisibility } from "../hooks/querys";
-import defaultAvatar from '../assets/default-avatar.jpg'
+import defaultAvatar from '../assets/default-avatar.jpg';
 
 function TestResultItem({ result, isOwner }) {
 
   const visibilityMutation = useUpdateTestVisibility();
   const deleteMutation = useDeleteTestResult();
 
+  //공유하기 함수
+  const handleShare = () => {
+    const shareUrl = `${window.location.origin}/result/${result.id}`;
+
+    navigator.clipboard.writeText(shareUrl).then(() => {
+      alert("링크가 복사되었습니다! 친구들에게 공유해보세요.");
+    }).catch(err => {
+      console.error("URL 복사 실패:", err);
+    });
+  };
+
+
   return (
     <div className="border-b py-4">
       {/* 닉네임 & 프로필 이미지 */}
       <div className="flex items-center gap-3 mb-2">
         <img
-          src={result.avatar || defaultAvatar} 
+          src={result.avatar || defaultAvatar}
           alt="프로필 이미지"
           className="w-10 h-10 rounded-full border"
         />
@@ -22,6 +34,10 @@ function TestResultItem({ result, isOwner }) {
       <div className="flex justify-end gap-2 mt-2">
         {isOwner && (
           <>
+            <button onClick={() => handleShare()}
+              className="btn">
+              🔗
+            </button>
 
             <button onClick={() => visibilityMutation.mutate({ id: result.id, visibility: !result.visibility })}
               className="btn bg-blue-500 text-white rounded-md hover:bg-blue-400">

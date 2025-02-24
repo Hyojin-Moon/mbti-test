@@ -64,7 +64,7 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
             <button
               type="button"
               onClick={() => document.getElementById("fileInput").click()}
-              className="mt-2 px-4 py-2 rounded-md btn-secondary"
+              className="mt-5 px-4 py-2 rounded-md btn-secondary"
             >
               이미지 선택
             </button>

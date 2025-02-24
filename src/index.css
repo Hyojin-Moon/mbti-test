@@ -20,14 +20,19 @@
 }
 
 /*  카드 스타일 */
+.card-container {
+  @apply max-w-2xl mx-auto p-4 mt-10 bg-white shadow-md rounded-lg;
+}
 .card {
-  @apply p-6 bg-white shadow-md rounded-lg;
+  @apply text-2xl font-bold text-center mb-4;
 }
 
 /*  입력 필드 스타일 */
 .input {
   @apply w-full p-2 border rounded-md;
 }
+
+
 
 /*  제목 스타일 */
 .heading {

@@ -1,17 +1,21 @@
 import { useDeleteTestResult, useUpdateTestVisibility } from "../hooks/querys";
 import defaultAvatar from '../assets/default-avatar.jpg';
+import useAlertStore from "../store/alertStore";
+import useToastStore from "../store/toastStore";
+
 
 function TestResultItem({ result, isOwner }) {
 
   const visibilityMutation = useUpdateTestVisibility();
   const deleteMutation = useDeleteTestResult();
-
+  const { showAlert } = useAlertStore();
+  const { showToast } = useToastStore();
   //공유하기 함수
   const handleShare = () => {
     const shareUrl = `${window.location.origin}/result/${result.id}`;
 
     navigator.clipboard.writeText(shareUrl).then(() => {
-      alert("링크가 복사되었습니다! 친구들에게 공유해보세요.");
+      showToast("링크가 복사되었습니다! 친구들에게 공유해보세요.");
     }).catch(err => {
       console.error("URL 복사 실패:", err);
     });
@@ -44,7 +48,10 @@ function TestResultItem({ result, isOwner }) {
               {result.visibility ? "비공개로 전환" : "공개로 전환"}
             </button>
 
-            <button onClick={() => deleteMutation.mutate(result.id)}
+            <button onClick={() => showAlert({
+                title: "정말 삭제하시겠습니까?",
+                onConfirm: () => deleteMutation.mutate(result.id)
+              })}
               className="btn btn-primary">
               삭제
             </button>

@@ -2,11 +2,13 @@ import { useNavigate } from "react-router-dom";
 import AuthForm from "../components/AuthForm";
 import { login } from "../api/auth";
 import useAuthStore from "../store/authStore";
+import useToastStore from "../store/toastStore";
 
 const Login = () => {
 
   const navigate = useNavigate();
   const { setUser } = useAuthStore();
+  const { showToast } = useToastStore();
 
   // 통신
   const handleLogin = async (userData) => {
@@ -24,11 +26,11 @@ const Login = () => {
 
       setUser(userDataToStore);
 
-      alert("로그인 성공!");
+      showToast("로그인 성공!");
       navigate("/");
     } catch (error) {
       console.error(error);
-      alert("로그인 실패: " + error.message || "알 수 없는 오류");
+      showToast("아이디와 비밀번호를 확인해 주세요.");
     }
   };
 

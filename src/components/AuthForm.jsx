@@ -5,17 +5,20 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
 
   const [formData, setFormData] = useState({
     id: initialData.id || "", //닉네임 수정모드
-    password: mode === "login" ? "" : undefined,
+    password: mode === "login" ? "" : "",
     nickname: mode === "signup" || mode === "profile" ?
-      initialData.nickname || "" : undefined,
+      initialData.nickname || "" : "",
     avatar: null,
   });
+  const [preview, setPreview] = useState(initialData.avatar || null);
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
 
     if (type === "file") {
-      setFormData((prev) => ({ ...prev, avatar: files[0] }));
+      const file = files[0];
+      setFormData((prev) => ({ ...prev, avatar: file }));
+      setPreview(URL.createObjectURL(file));
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
@@ -41,6 +44,32 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
+
+        {/* 프로필 이미지 */}
+        {mode === "profile" && (
+          <div className="flex flex-col items-center text-center">
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleChange}
+              className="hidden"
+              id="fileInput"
+            />
+            {preview &&
+              <img
+                src={preview}
+                alt="미리보기"
+                className="w-24 h-24 mt-2 rounded-full border flex-"
+              />}
+            <button
+              type="button"
+              onClick={() => document.getElementById("fileInput").click()}
+              className="mt-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+            >
+              이미지 선택
+            </button>
+          </div>
+        )}
 
         {/* 아이디 */}
         {mode === "signup" || mode === "login" ? (
@@ -87,19 +116,6 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
               value={formData.nickname || ""}
               onChange={handleChange}
               required
-              className="w-full p-2 border rounded-md"
-            />
-          </div>
-        )}
-
-        {/* 프로필 이미지 */}
-        {(mode === "signup" || mode === "profile") && (
-          <div>
-            <label className="block font-medium">프로필 이미지</label>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleChange}
               className="w-full p-2 border rounded-md"
             />
           </div>

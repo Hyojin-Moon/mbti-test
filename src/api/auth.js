@@ -2,8 +2,18 @@ import axios from 'axios';
 
 const API_URL = 'https://www.nbcamp-react-auth.link';
 
-export const register = async (userData) => {
-  const response = await axios.post(`${API_URL}/register`, userData);
+export const register = async (id, password, nickname) => {
+
+  const formData = new FormData();
+  formData.append("id", id);
+  formData.append("password", password);
+  formData.append("nickname", nickname);
+
+  const response = await axios.post(`${API_URL}/register`, formData, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
   return response.data;
 };
 
@@ -21,10 +31,11 @@ export const getUserProfile = async (token) => {
   return response.data;
 };
 
-export const updateProfile = async (nickname, token) => {
+export const updateProfile = async (nickname, avatar, token) => {
 
   const formData = new FormData();
   formData.append("nickname", nickname);
+  if (avatar) formData.append("avatar", avatar);
 
   const response = await axios.patch(`${API_URL}/profile`, formData, {
     headers: {

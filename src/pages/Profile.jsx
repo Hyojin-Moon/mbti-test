@@ -9,9 +9,8 @@ const Profile = () => {
   const handleUpdateProfile = async (formData) => {
     try {
 
-      console.log(user.token);
-      const updatedUser = await updateProfile(formData.nickname, user.token);
-      setUser({ ...user, nickname: updatedUser.nickname });
+      const updatedUser = await updateProfile(formData.nickname, formData.avatar, user.token);
+      setUser({ ...user, ...updatedUser });
       alert("정보수정완료")
     } catch (error) {
       console.error(error);

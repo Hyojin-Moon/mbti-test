@@ -14,12 +14,18 @@ importers:
       '@tanstack/react-query':
         specifier: ^5.66.8
         version: 5.66.8(react@19.0.0)
+      autoprefixer:
+        specifier: ^10.x.x
+        version: 10.4.20(postcss@8.5.3)
       axios:
         specifier: ^1.7.9
         version: 1.7.9
       jwt-decode:
         specifier: ^4.0.0
         version: 4.0.0
+      postcss:
+        specifier: ^8.x.x
+        version: 8.5.3
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -35,6 +41,9 @@ importers:
       react-toastify:
         specifier: ^11.0.3
         version: 11.0.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      tailwindcss:
+        specifier: ^3.x.x
+        version: 3.4.17
       zustand:
         specifier: ^5.0.3
         version: 5.0.3(@types/react@19.0.10)(react@19.0.0)
@@ -51,9 +60,6 @@ importers:
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.3.4(vite@6.1.1(jiti@1.21.7)(yaml@2.7.0))
-      autoprefixer:
-        specifier: ^10.4.20
-        version: 10.4.20(postcss@8.5.3)
       eslint:
         specifier: ^9.19.0
         version: 9.20.1(jiti@1.21.7)
@@ -72,12 +78,6 @@ importers:
       json-server:
         specifier: 1.0.0-beta.3
         version: 1.0.0-beta.3
-      postcss:
-        specifier: ^8.5.3
-        version: 8.5.3
-      tailwindcss:
-        specifier: 3.4.17
-        version: 3.4.17
       vite:
         specifier: ^6.1.0
         version: 6.1.1(jiti@1.21.7)(yaml@2.7.0)

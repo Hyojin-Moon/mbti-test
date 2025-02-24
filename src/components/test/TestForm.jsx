@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { questions } from "../data/questions";
+import { questions } from "../../data/questions";
 
 const TestForm = ({ onSubmit }) => {
-  
+
   // answers는 여기서만 사용하니까 지역상태로 유지 
   const [answers, setAnswers] = useState(
     //답변 저장하는 객체 생성

@@ -1,10 +1,10 @@
-import TestResultItem from "../components/TestResultItem";
+import TestResultItem from "../components/test/TestResultItem";
 import { useTestResults } from "../hooks/querys";
 import useAuthStore from "../store/authStore";
 
 const MyTestResults = () => {
   const { data: testResults, isLoading } = useTestResults();
-  const { user } = useAuthStore(); 
+  const { user } = useAuthStore();
 
   if (isLoading) return <p>로딩 중...</p>;
 

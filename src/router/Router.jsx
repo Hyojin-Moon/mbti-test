@@ -5,8 +5,8 @@ import Signup from "../pages/Signup";
 import Profile from "../pages/Profile";
 import TestPage from "../pages/TestPage";
 import TestResultPage from "../pages/TestResultPage";
-import Layout from "../components/Layout";
-import ProtectedRoute from "../components/ProtectedRoute";
+import Layout from "../components/common/Layout";
+import ProtectedRoute from "../components/common/ProtectedRoute";
 import MyTestResults from "../pages/MyTestResult";
 import ResultPage from "../components/Resultpage";
 
@@ -15,16 +15,16 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route element={<Layout />}>
-        <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="result/:id" element={<ResultPage />} />
 
           <Route element={<ProtectedRoute />}>
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/test" element={<TestPage />} />
-          <Route path="/results" element={<TestResultPage />} />
-          <Route path="/my-results" element={<MyTestResults />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/test" element={<TestPage />} />
+            <Route path="/results" element={<TestResultPage />} />
+            <Route path="/my-results" element={<MyTestResults />} />
           </Route>
         </Route>
       </Routes>

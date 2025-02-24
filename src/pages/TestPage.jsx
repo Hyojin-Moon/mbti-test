@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TestForm from "../components/TestForm";
+import TestForm from "../components/test/TestForm";
 import { calculateMBTI, mbtiDescriptions } from "../utils/mbtiCalculator";
 import { createTestResult } from "../api/testResults";
 import { useNavigate } from "react-router-dom";

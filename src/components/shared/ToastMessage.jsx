@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import useToastStore from "../store/toastStore";
-import { cn } from "../lib/utils";
+import useToastStore from "../../store/toastStore";
+import { cn } from "../../lib/utils";
 
 const ToastMessage = () => {
   const { isOpen, message, hideToast } = useToastStore();
 
   useEffect(() => {
     if (isOpen) {
-      const timer = setTimeout(() => hideToast(), 3000); // ✅ 3초 후 자동 닫힘
+      const timer = setTimeout(() => hideToast(), 3000); 
       return () => clearTimeout(timer);
     }
   }, [isOpen, hideToast]);

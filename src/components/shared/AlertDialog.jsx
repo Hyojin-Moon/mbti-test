@@ -1,6 +1,6 @@
-import  useAlertStore from "../store/alertStore";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "../components/ui/dialog";
-import { Button } from "../components/ui/button";
+import useAlertStore from "../../store/alertStore";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "../ui/dialog";
+import { Button } from "../ui/button";
 
 const AlertDialog = () => {
   const { isOpen, title, message, onConfirm, onClose } = useAlertStore();

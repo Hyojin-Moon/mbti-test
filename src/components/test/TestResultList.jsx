@@ -1,6 +1,6 @@
 import TestResultItem from "./TestResultItem";
-import useAuthStore from "../store/authStore";
-import { useTestResults } from "../hooks/querys";
+import useAuthStore from "../../store/authStore";
+import { useTestResults } from "../../hooks/querys";
 
 function TestResultList() {
 

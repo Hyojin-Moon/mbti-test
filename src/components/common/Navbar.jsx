@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import useAuthStore from "../store/authStore";
+import useAuthStore from "../../store/authStore";
 import { useState } from "react";
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
 
       {/* 모바일 햄버거 버튼 */}
       <button className="nav-toggle" onClick={() => setMenuOpen(!menuOpen)}>☰</button>
-      
+
       {/* 오른쪽 - 로그인 & 회원가입 */}
       <div className={`absolute top-14 right-0 bg-red-500 p-4 flex flex-col gap-5 text-center transition-all duration-300 md:static md:flex-row md:gap-4 md:flex rounded-md ${menuOpen ? "flex" : "hidden"}`}>
         <Link to="/test" className="nav-link">TEST START!</Link>

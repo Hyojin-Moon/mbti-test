@@ -1,6 +1,6 @@
 import './App.css';
-import AlertDialog from './components/AlertDialog';
-import ToastMessage from './components/ToastMessage';
+import AlertDialog from './components/shared/AlertDialog';
+import ToastMessage from './components/shared/ToastMessage';
 import Router from './router/Router';
 
 function App() {

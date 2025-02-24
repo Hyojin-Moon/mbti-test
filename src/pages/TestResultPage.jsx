@@ -1,7 +1,7 @@
-import TestResultList from "../components/TestResultList";
+import TestResultList from "../components/test/TestResultList";
 
 function TestResultPage() {
-  return <TestResultList />
+  return <TestResultList />;
 }
 
 export default TestResultPage;

@@ -18,11 +18,9 @@ const Profile = () => {
   }
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
-      {user ? (
+    <div>
+      {user && (
         <AuthForm mode="profile" onSubmit={handleUpdateProfile} initialData={user} />
-      ) : (
-        <p className="text-lg text-red-500">로그인이 필요합니다.</p>
       )}
     </div>
   );

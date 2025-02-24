@@ -49,7 +49,7 @@ const TestPage = () => {
       <div className="bg-white rounded-lg p-8 max-w-lg w-full h-full overflow-y-auto">
         {!result ? (
           <>
-            <h1 className="text-3xl font-bold text-primary-color mb-6">
+            <h1 className="text-3xl font-bold text-primary-color mb-6 text-center">
               MBTI 테스트
             </h1>
             <TestForm onSubmit={handleTestSubmit} />

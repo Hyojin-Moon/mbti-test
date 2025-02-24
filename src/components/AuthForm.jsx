@@ -38,8 +38,8 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 mt-20 bg-white shadow-md rounded-lg">
-      <h2 className="text-2xl font-bold mb-4 flex justify-center">
+    <div className="container section">
+      <h2 className="heading">
         {mode === "signup" ? "회원가입" : mode === "login" ? "로그인" : "정보 변경"}
       </h2>
 
@@ -64,7 +64,7 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
             <button
               type="button"
               onClick={() => document.getElementById("fileInput").click()}
-              className="mt-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+              className="mt-2 px-4 py-2 rounded-md btn-secondary"
             >
               이미지 선택
             </button>
@@ -101,7 +101,7 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
               value={formData.password}
               onChange={handleChange}
               required
-              className="w-full p-2 border rounded-md"
+              className="input"
             />
           </div>
         )}
@@ -116,14 +116,14 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
               value={formData.nickname || ""}
               onChange={handleChange}
               required
-              className="w-full p-2 border rounded-md"
+              className="input"
             />
           </div>
         )}
 
         <button
           type="submit"
-          className="w-full bg-red-500 text-white p-2 rounded-md hover:bg-red-600"
+          className="btn btn-primary w-full"
         >
           {mode === "signup" ? "회원가입" : mode === "login" ? "로그인" : "프로필 변경"}
         </button>

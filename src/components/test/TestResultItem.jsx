@@ -42,8 +42,15 @@ function TestResultItem({ result, isOwner }) {
               🔗
             </button>
 
-            <button onClick={() => visibilityMutation.mutate({ id: result.id, visibility: !result.visibility })}
-              className="btn bg-blue-500 text-white rounded-md hover:bg-blue-400">
+            <button
+              onClick={() => showAlert({
+                title: "공개 여부를 변경하시겠어요?",
+                onConfirm: () => visibilityMutation.mutate({
+                  id: result.id,
+                  visibility: !result.visibility
+                })
+              })}
+              className="btn bg-blue-500 text-white rounded-md hover:bg-blue-400" >
               {result.visibility ? "비공개로 전환" : "공개로 전환"}
             </button>
 

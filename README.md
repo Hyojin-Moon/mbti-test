@@ -1,9 +1,36 @@
-# React + Vite
+# MBTI 웹페이지 프로젝트
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+##  프로젝트 소개
+MBTI 성격 유형 검사를 제공하는 **웹 애플리케이션**입니다. 사용자가 질문에 답하면 **MBTI 결과를 분석 및 저장**하고,
+**테스트 결과를 확인 및 공유할 수 있는 기능**을 제공합니다.
 
-Currently, two official plugins are available:
+##  MBTI 테스트
+- 사용자가 제공된 질문에 답변하여 **MBTI 유형을 도출**합니다.
+- 도출된 MBTI 유형에 따라 **해당 유형의 특성 및 추천 궁합을 안내**합니다.
+- 테스트 결과를 저장하고, 이후 확인할 수 있습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# mbti-test
+##  주요 기능
+### 1️⃣ MBTI 테스트 진행
+- 사용자에게 주어진 질문에 답변하면 **MBTI 유형을 자동 계산**합니다.
+- **각 유형별 설명**과 함께 결과를 시각적으로 제공됩니다.
+
+### 2️⃣ 테스트 결과 조회 및 공유
+- 사용자가 진행한 테스트 결과를 **마이페이지에서 조회**할 수 있습니다.
+- **SNS 공유 기능**을 통해 결과를 다른 사람과 공유할 수 있습니다.
+
+### 3️⃣ 사용자 인증 및 프로필 관리
+- 회원가입 및 로그인 기능 제공 (JWT 인증 기반)
+- 로그인한 사용자는 **개인 프로필 및 테스트 결과를 관리**할 수 있습니다.
+
+### 4️⃣ 반응형 UI 및 사용자 경험 개선
+- Tailwind CSS와 Headless UI, Shadcn/UI를 활용한 **깔끔하고 직관적인 디자인** 적용
+- 모바일 및 데스크톱 환경에서 최적화된 UX 제공
+
+##  기술 스택
+- **Frontend**: React, Tailwind CSS, Headless UI, Shadcn/UI
+- **상태 관리**: TanStack Query (React Query), Zustand
+- **HTTP 요청**: Axios
+- **라우팅**: React Router
+- **기타**: Vite, ESLint, Prettier
+
+

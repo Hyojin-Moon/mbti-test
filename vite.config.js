@@ -13,4 +13,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"), // "@/components/..." 형태로 사용 가능
     },
   },
+  server: {
+    historyApiFallback: true //  새로고침 시 index.html을 반환하도록 설정
+  }
 });

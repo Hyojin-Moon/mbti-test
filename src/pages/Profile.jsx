@@ -1,8 +1,9 @@
-import useToastStore from "../store/toastStore";
 import { updateProfile } from "../api/auth";
 import AuthForm from "../components/AuthForm";
 import useAuthStore from "../store/authStore";
 import { useTestResults, useUpdateProfileTestUser } from "../hooks/querys";
+import useToastStore from "@/store/toastStore";
+
 const Profile = () => {
 
   const { user, setUser } = useAuthStore();
@@ -22,7 +23,6 @@ const Profile = () => {
         nickname: formData.nickname,
         testResults,
       });
-      console.log(updateProfileTestUser)
 
     } catch (error) {
       console.error(error);

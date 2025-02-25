@@ -8,20 +8,20 @@
 }
 
 .btn-primary {
-  @apply bg-red-500 text-white hover:bg-red-400;
+  @apply bg-primary text-primary-foreground hover:bg-primary/90;
 }
 
 .btn-secondary {
-  @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+  @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
 }
 
 .btn-outline {
-  @apply border-2 border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white;
+  @apply border border-border text-foreground hover:bg-muted hover:text-card-foreground;
 }
 
 /*  카드 스타일 */
 .card-container {
-  @apply max-w-2xl mx-auto p-4 mt-10 bg-white shadow-md rounded-lg;
+  @apply max-w-2xl mx-auto p-4 mt-10 bg-card shadow-md rounded-lg text-card-foreground;
 }
 .card {
   @apply text-2xl font-bold text-center mb-4;
@@ -29,25 +29,26 @@
 
 /*  입력 필드 스타일 */
 .input {
-  @apply w-full p-2 border rounded-md;
+  @apply w-full p-2 border rounded-md border-input text-foreground;
 }
 
 
 
 /*  제목 스타일 */
 .heading {
-  @apply text-2xl font-bold text-center mb-4;
+  @apply text-2xl font-bold text-center mb-4 text-foreground;
 }
 
 /*  네비게이션 스타일 */
 .nav-link {
-  @apply mr-4 font-bold px-4 py-2 border-2 border-white rounded-md hover:bg-red-400 transition;
+  @apply mr-4 font-bold px-4 py-2 border-2 border-transparent rounded-md 
+  text-foreground hover:bg-muted transition;
 }
 
 /*  레이아웃 */
 .container {
   /* @apply max-w-2xl mx-auto p-4; */
-  @apply max-w-md mx-auto p-6 bg-white shadow-md rounded-3xl;
+  @apply max-w-md mx-auto p-6 bg-white shadow-[0_0_12px_rgba(0,0,0,0.15)] rounded-3xl text-foreground;
 }
 
 .section {
@@ -60,7 +61,7 @@
 }
 
 .nav-toggle {
-  @apply block md:hidden text-white text-xl;
+  @apply block md:hidden text-foreground text-xl;
 }
 
 /*  반응형 버튼 */
@@ -70,7 +71,7 @@
 
 /*  반응형 카드 */
 .card-responsive {
-  @apply p-4 sm:p-6 md:p-8 lg:p-10 bg-white shadow-md rounded-lg;
+  @apply p-4 sm:p-6 md:p-8 lg:p-10 bg-card shadow-md rounded-lg text-card-foreground;
 }
 
 /*  반응형 폼 */

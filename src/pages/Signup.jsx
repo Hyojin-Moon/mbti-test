@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import AuthForm from "../components/AuthForm";
 import { register } from "../api/auth";
-import useToastStore from "../store/toastStore";
+import useToastStore from "@/store/toastStore";
 
 const Signup = () => {
   const navigate = useNavigate();

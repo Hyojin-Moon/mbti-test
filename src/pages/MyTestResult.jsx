@@ -3,10 +3,10 @@ import { useTestResults } from "../hooks/querys";
 import useAuthStore from "../store/authStore";
 
 const MyTestResults = () => {
-  const { data: testResults, isLoading } = useTestResults();
+  const { data: testResults, isPending } = useTestResults();
   const { user } = useAuthStore();
 
-  if (isLoading) return <p>로딩 중...</p>;
+  if (isPending) return <p>로딩 중...</p>;
 
   const myResults = testResults.filter(result => result.userId === user.id);
 

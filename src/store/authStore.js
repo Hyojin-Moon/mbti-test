@@ -1,14 +1,44 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { getUserProfile } from "../api/auth";
 
 const useAuthStore = create(
-  persist( // 데이터를 저장하고 유지시켜주는 미들웨어
-    (set) => ({
-      //상태 => userAuthStore를 사용하여 어디서든 상태 접근 가능
+  persist(
+    (set, get) => ({
+      //상태
       user: null,
-      //액션 => 스토어에서 내부액션 처리 / 컴포넌트에서도 가능은함 추천X
-      setUser: (userData) => set({ user: userData }),
-      logout: () => set({ user: null }),
+      //액션
+      setUser: (userData) => {
+        const prevUser = get().user;
+        const updatedUser = {
+          ...prevUser,  // 기존 데이터 유지
+          ...userData,  // 변경된 데이터 적용
+        };
+
+        set({ user: updatedUser });
+
+        localStorage.setItem("auth-storage", JSON.stringify({ state: { user: updatedUser } }));
+      },
+
+      logout: () => {
+        localStorage.removeItem("auth-storage");
+        set({ user: null });
+      },
+      
+      fetchUser: async () => {
+        try {
+          const token = localStorage.getItem("token");
+          if (!token) return;
+
+          const userData = await getUserProfile(token);
+          set({ user: userData });
+
+          localStorage.setItem("auth-storage", JSON.stringify({ state: { user: userData } }));
+        } catch (error) {
+          console.error("유저 정보를 불러오는 중 오류 발생:", error);
+          set({ user: null });
+        }
+      }
     }),
     //옵션
     {

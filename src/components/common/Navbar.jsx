@@ -25,8 +25,8 @@ const Navbar = () => {
         MBTI TEST
       </Link>
 
-            {/* 모바일 전용 햄버거 메뉴 */}
-            <div className="md:hidden">
+      {/* 모바일 전용 햄버거 메뉴 */}
+      <div className="md:hidden">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="h-12 w-12 flex items-center justify-center">

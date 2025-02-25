@@ -7,7 +7,7 @@ const ToastMessage = () => {
 
   useEffect(() => {
     if (isOpen) {
-      const timer = setTimeout(() => hideToast(), 3000); 
+      const timer = setTimeout(() => hideToast(), 3000);
       return () => clearTimeout(timer);
     }
   }, [isOpen, hideToast]);

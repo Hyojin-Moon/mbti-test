@@ -11,9 +11,9 @@ const Home = () => {
       <p className="text-2xl">
         자신의 성격 유형을 확인할 수 있도록 솔직하게 답변해 주세요.
       </p>
-      <Link to="/test" 
-      className="btn btn-primary text-xl">
-      테스트 시작
+      <Link to="/test"
+        className="btn btn-primary text-xl">
+        테스트 시작
       </Link>
     </div>
   );

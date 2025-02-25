@@ -5,7 +5,7 @@ import useToastStore from "@/store/toastStore";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const {showToast} = useToastStore();
+  const { showToast } = useToastStore();
 
   //통신
   const handleSignup = async (userData) => {
@@ -18,7 +18,7 @@ const Signup = () => {
       navigate("/login");
 
     } catch (error) {
-      console.error(error)
+      console.error(error);
       showToast("입력내용을 확인해주세요. ");
     }
   };

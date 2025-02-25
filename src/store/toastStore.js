@@ -6,7 +6,7 @@ const useToastStore = create((set) => ({
 
   showToast: (message) => {
     set({ isOpen: true, message });
-    setTimeout(() => set({ isOpen: false, message: "" }), 3000); 
+    setTimeout(() => set({ isOpen: false, message: "" }), 3000);
   },
 
   hideToast: () => set({ isOpen: false, message: "" }),

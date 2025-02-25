@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom"
 
 const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
 
@@ -128,6 +128,14 @@ const AuthForm = ({ mode, onSubmit, initialData = {} }) => {
           {mode === "signup" ? "회원가입" : mode === "login" ? "로그인" : "프로필 변경"}
         </button>
       </form>
+
+      {/* 회원가입 링크 */}
+      {mode==="login" && (
+        <p className="mt-4 text-center">
+          아이디가 없으신가요?
+          <Link to="/signup" className="text-blue-500 hover:underline p-4">회원가입</Link>
+        </p>
+      )}
     </div>
   );
 };

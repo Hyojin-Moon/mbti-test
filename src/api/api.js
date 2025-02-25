@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: import.meta.env.USER_API_URL,
+  baseURL: import.meta.env.VITE_USER_API_URL,
 });
 
 //응답에 자동으로 토큰 추가

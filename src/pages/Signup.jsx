@@ -13,7 +13,6 @@ const Signup = () => {
     try {
       await register(userData);
 
-      //이미지 업로드는 여기서 ? 
       showToast("회원가입 완료! 로그인 페이지로 이동합니다.");
       navigate("/login");
 
